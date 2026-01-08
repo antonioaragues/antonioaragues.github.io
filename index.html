@@ -1,67 +1,1023 @@
----
-title: Hello!
-layout: default
----
-<section>
-  <h1>This is me</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Antonio Aragues Portfolio - Product Leader">
+    <title>Antonio Aragues - Product Leader</title>
+    <style>
+        /* --- VARIABLES & RESET --- */
+        :root {
+            /* Light Theme (Default) */
+            --bg-color: #ffffff;
+            --text-primary: #111111;
+            --text-secondary: #666666; 
+            --text-tertiary: #999999;
+            --accent: #000000;
+            --link-hover: #444444;
+            --card-bg: #f9f9f9; 
+            --border-color: rgba(0,0,0,0.06);
+            --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --max-width: 960px; /* Wider container for grid */
+        }
 
-  <p>Oh, and one thing I cannot stand is the mangling of words with multiple underscores in them like perform_complicated_task or do_this_and_do_that_and_another_thing.</p>
+        /* Dark Theme Override */
+        [data-theme="dark"] {
+            --bg-color: #111111;
+            --text-primary: #ededed;
+            --text-secondary: #a1a1a1;
+            --text-tertiary: #666;
+            --accent: #ffffff;
+            --link-hover: #cccccc;
+            --card-bg: #1c1c1c;
+            --border-color: rgba(255,255,255,0.1);
+        }
 
-  <h2>Experience</h2>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <p><strong>Director of Product, Celonis</strong><br>
-    <sup>Oct 2022 - Current</sup><br>
-    Leading the Developer Platform and Ecosystem product area: Marketplace, APIs, Celonis 4 Consulting, Demo Experience.
-  </p>
-  
-  <p><strong>Group Product Manager, Typeform</strong><br>
-    <sup>Jan 2022 - Oct 2022</sup><br>
-    Leading the Insights & Analytics and Audience Management product areas
-  </p>
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+        }
 
-  <p><strong>Group Product Manager, Eventbrite</strong><br>
-    <sup>Jan 2019 - Jan 2022</sup><br>
-    Leading the Commerce product area: Checkout experience, Ticketing & Inventory and Order Management.
-  </p>
+        /* --- LAYOUT CONTAINER --- */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 4rem 1.5rem 6rem;
+            width: 100%;
+            flex: 1;
+        }
 
-  <p><strong>Product Manager, Liferay</strong><br>
-    <sup>Jun 2017 - Jan 2019</sup><br>
-    Leading the Digital Asset Management and Collaboration products.
-  </p>
+        /* --- TYPOGRAPHY --- */
+        a { 
+            color: inherit; 
+            text-decoration: none; 
+            border-bottom: 1px solid rgba(120, 120, 120, 0.3); 
+            transition: all 0.2s ease; 
+        }
+        a:hover { 
+            color: var(--text-primary); 
+            border-bottom-color: var(--text-primary); 
+        }
+        
+        h1 { 
+            font-size: 1.5rem;
+            font-weight: 600; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            max-width: 720px; /* Keep text constrained */
+        }
+        
+        h2 { 
+            font-size: 0.85rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1em; 
+            color: var(--text-secondary); 
+            margin-bottom: 2rem; 
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        
+        p { margin-bottom: 1.5rem; color: var(--text-primary); max-width: 65ch; }
+        
+        strong { font-weight: 600; }
 
-  <p><strong>Product Development Manager, Ericsson</strong><br>
-    <sup>Sep 2013 - Jun 2017</sup><br>
-    Leading the Cloud SDN Product Development Unit (Product & Engineering)  
-  </p>
+        /* --- NAVIGATION --- */
+        header { padding: 2rem 0 4rem; }
 
-  <p>For more experiences, check my <a href="https://www.linkedin.com/in/antonioaragues/" title="LinkedIn">LinkedIn</a></p>
-  
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo { font-weight: 700; font-size: 1.1rem; color: var(--text-primary); border: none; }
+        .logo:hover { border: none; }
 
-  <h2>Education</h2>
-  <ul>
-    <li><strong>Product Strategy</strong>, Reforge / 2020 cohort</li>
-    <li><strong>Master in NFV & SDN</strong>, UC3M / 2017</li>
-    <li><strong>MBA International</strong>, University of Madrid / 2011</li>
-    <li><strong>MSc in Biomedical Engineering</strong>, University of Zaragoza / 2010</li>
-    <li><strong>MSc in Telecom Engineering</strong>, University of Zaragoza / 2006</li>
-    <li><strong>Master in NFV & SDN</strong>, UC3M / 2017</li>
-  </ul>
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; align-items: center; }
+        .nav-links button {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.2s;
+        }
+        .nav-links button:hover { color: var(--text-primary); }
+        .nav-links button.active { color: var(--text-primary); font-weight: 600; }
 
-  <h2>Collaborations and Professional Organizations</h2>
-  <ul>
-    <li><strong>Bioinformatics Professor</strong>, University of San Jorge</li>
-    <li><strong>Product Advisor</strong>, Fintech App</li>
-    <li><strong>Featured Speaker</strong>, Product School</li>
-    <li><strong>Engineering & Product Mentor</strong>, Plato</li>
-    <li><strong>Technical comittee member</strong>, AENOR/CTN139</li>
-    <li><strong>Steering Board Member</strong>, ZB40</li>
-  </ul>
+        /* Theme Toggle Button specific styles */
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin-left: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            transition: color 0.2s, transform 0.2s;
+            opacity: 0.8;
+        }
+        .theme-toggle:hover { 
+            opacity: 1; 
+            color: var(--text-primary); 
+            transform: rotate(15deg); 
+        }
 
-  <h2>Books and Publications</h2>
-  <ul>
-    <li><strong>[BOOK] Neonatal Mentoring Technologies</strong>, IGI Global / 2012</li>
-    <li><strong>[BOOK] P2P Technologies</strong>, Anaya Multimedia / 2016</li>
-    <li><strong>[PAPER] Trends in entertainment, Home Automation and e-Health: Toward Cross-Domain Integration</strong>, IEEE Comm Magazine / 2011</li>
-    <li><strong>[PAPER] Emerging technologies toward interoperability and standardization</strong>, IEEE Comm Magazine / 2011</li>
-  </ul>
-</section>
+        /* --- SECTIONS (SPA LOGIC) --- */
+        .page-section {
+            display: none; 
+            animation: fadeIn 0.4s ease;
+        }
+        .page-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- NARRATIVE WORK STYLES --- */
+        .narrative-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            max-width: 65ch;
+        }
+        .narrative-text p { margin-bottom: 1.5rem; }
+
+        .cta-container {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            border: 1px solid var(--text-primary);
+            text-decoration: none;
+            background: transparent;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg-color);
+            border-bottom: 1px solid var(--text-primary); 
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            border-bottom-color: var(--text-primary);
+            color: var(--bg-color);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid rgba(120,120,120,0.3);
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-primary);
+        }
+
+        /* --- NEW PRODUCT GALLERY GRID --- */
+        /* Grouped headers */
+        .company-section {
+            margin-bottom: 4rem;
+        }
+        .company-title {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .company-title img {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-color: var(--text-secondary);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 160px;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .gallery-content {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .gallery-badge img { width: 14px; height: 14px; border-radius: 2px; }
+
+        .gallery-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .gallery-content p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+            flex-grow: 1; /* Push button down */
+        }
+
+        .gallery-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(120,120,120,0.3);
+            align-self: flex-start;
+        }
+        .gallery-link:hover {
+            border-bottom-color: var(--text-primary);
+        }
+
+        /* --- SHELF / INPUTS (ALEX HIPP STYLE) --- */
+        .my-things-intro {
+            margin-bottom: 4rem;
+            font-size: 1.05rem;
+        }
+
+        .shelf-section { margin-bottom: 5rem; }
+        
+        /* Default vertical shelf (books, posters) */
+        .shelf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 2rem 1.5rem;
+        }
+
+        .shelf-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .shelf-cover {
+            width: 100%;
+            aspect-ratio: 2/3; /* Book ratio (vertical) */
+            background-color: var(--card-bg);
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        /* Square ratio for tools */
+        .shelf-cover.square { aspect-ratio: 1/1; }
+        
+        /* Landscape ratio for articles, videos, games */
+        .shelf-cover.landscape { aspect-ratio: 16/9; }
+
+        .shelf-cover:hover { transform: translateY(-3px); }
+
+        .shelf-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.95;
+        }
+
+        .shelf-info h4 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 0.2rem;
+            color: var(--text-primary);
+        }
+
+        .shelf-info span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: block;
+            line-height: 1.3;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+            backdrop-filter: blur(4px); /* Blur effect */
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-height: 90vh;
+            overflow-y: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: var(--text-primary);
+        }
+
+        .typeform-placeholder {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--card-bg);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            border: 1px dashed var(--border-color);
+            margin-top: 1.5rem;
+        }
+
+        /* --- FOOTER --- */
+        footer { 
+            margin-top: auto; 
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border-color); 
+            font-size: 0.85rem; 
+            color: var(--text-secondary); 
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-links { display: flex; gap: 1.5rem; align-items: center; }
+        .social-links a, .social-links button { border-bottom: none; color: var(--text-secondary); cursor: pointer; background: none; border: none; font-size: 0.85rem; padding: 0; }
+        .social-links a:hover, .social-links button:hover { color: var(--text-primary); }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 600px) {
+            .cta-container { flex-direction: column; align-items: stretch; gap: 1rem; }
+            .btn { text-align: center; }
+            .nav-links { gap: 1rem; font-size: 0.9rem; }
+            .shelf-grid { grid-template-columns: repeat(2, 1fr); }
+            .modal-content { padding: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" onclick="router('home'); return false;" class="logo">Antonio Aragüés</a>
+            <div class="nav-links">
+                <button onclick="router('home')" id="nav-home" class="active">Home</button>
+                <button onclick="router('journey')" id="nav-journey">Journey</button>
+                <button onclick="router('shipped')" id="nav-shipped">Shipped</button>
+                <button onclick="router('inputs')" id="nav-inputs">Inputs</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- === PAGE: HOME === -->
+    <main id="home" class="page-section active">
+        <h1>
+            Product Leader building software for over 15 years. Generalist, technical, and driven by complex problems.
+        </h1>
+        <div style="margin-top: 2rem;">
+            <p>
+                Hi, I'm Antonio. I'm currently <strong>Product Lead at Celonis</strong>. I have extensive experience navigating both B2B and B2C landscapes, helping scale companies like <strong>Typeform</strong>, <strong>Eventbrite</strong>, and <strong>Liferay</strong>.
+            </p>
+            <p>
+                My journey has been hands-on from the start. I've built products from every seat at the table—as a Software Engineer, Engineering Manager, and Founder. I thrive in ambiguity and love simplifying complex technical challenges.
+            </p>
+        </div>
+    </main>
+
+    <!-- === PAGE: JOURNEY === -->
+    <main id="journey" class="page-section">
+        <div class="narrative-text">
+            <p>
+                My career has been defined by a constant evolution from deep technical engineering to strategic product leadership. I began my journey in the trenches as a <strong>Software Engineer</strong> and later as a <strong>Co-founder & CTO</strong> of a healthcare startup (Goodday). This technical foundation gave me a deep empathy for engineering challenges and a pragmatic approach to building software.
+            </p>
+            <p>
+                As I pivoted into Product Management, I focused on high-growth B2B/SaaS environments. At <strong>Liferay</strong>, I had the opportunity to build a product from scratch—Analytics Cloud—taking it from a concept to a robust "Zero to One" launch.
+            </p>
+            <p>
+                Later, at <strong>Eventbrite</strong>, I managed the Commerce area, overseeing critical monetization and payment infrastructures at a massive global scale. Most recently, at <strong>Typeform</strong> and <strong>Celonis</strong>, my focus has shifted to enabling ecosystems and leveraging data to drive user value.
+            </p>
+            <p>
+                I thrive in environments where technology meets business strategy, helping teams cut through complexity to deliver tools that users genuinely love.
+            </p>
+        </div>
+
+        <div class="cta-container">
+            <a href="https://linkedin.com/in/antonioaragues/" target="_blank" class="btn btn-primary">View LinkedIn Profile ↗</a>
+            <a href="#" class="btn btn-secondary">Download Resume ↓</a>
+        </div>
+    </main>
+
+    <!-- === PAGE: SHIPPED === -->
+    <main id="shipped" class="page-section">
+        
+        <!-- CELONIS SECTION -->
+        <div class="company-section">
+            <div class="company-title">
+                <img src="https://logo.clearbit.com/celonis.com" alt="Celonis"> Celonis
+            </div>
+            <div class="gallery-grid">
+                <!-- Intelligence API -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Intelligence+API" alt="Intelligence API">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Intelligence API</h3>
+                        <p>Standardized API for process mining insights.</p>
+                        <a href="#" target="_blank" class="gallery-link">View API Docs ↗</a>
+                    </div>
+                </div>
+
+                <!-- Marketplace -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Marketplace" alt="Marketplace">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Marketplace</h3>
+                        <p>Ecosystem for apps and connectors.</p>
+                        <a href="#" target="_blank" class="gallery-link">Visit Marketplace ↗</a>
+                    </div>
+                </div>
+
+                <!-- Developer Portal -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Dev+Portal" alt="Dev Portal">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Developer Portal</h3>
+                        <p>Central hub for ecosystem developers.</p>
+                        <a href="#" target="_blank" class="gallery-link">Visit Portal ↗</a>
+                    </div>
+                </div>
+
+                <!-- Business Networks -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Business+Networks" alt="Business Networks">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Business Networks</h3>
+                        <p>Connecting processes across organizations.</p>
+                        <a href="#" target="_blank" class="gallery-link">Learn More ↗</a>
+                    </div>
+                </div>
+
+                 <!-- Consulting Hub -->
+                 <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Consulting+Hub" alt="Consulting Hub">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Consulting Hub</h3>
+                        <p>Tooling for partners to deliver value faster.</p>
+                        <a href="#" target="_blank" class="gallery-link">View Product ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TYPEFORM SECTION -->
+        <div class="company-section">
+            <div class="company-title">
+                <img src="https://logo.clearbit.com/typeform.com" alt="Typeform"> Typeform
+            </div>
+            <div class="gallery-grid">
+                <!-- Form Recommendations -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Recommendations" alt="Recommendations">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Form Recommendations</h3>
+                        <p>Smart suggestions to improve form conversion rates.</p>
+                        <a href="#" target="_blank" class="gallery-link">See Feature ↗</a>
+                    </div>
+                </div>
+
+                <!-- Partial Responses -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Partial+Responses" alt="Partial Responses">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Partial Responses</h3>
+                        <p>Capture insights from unfinished forms to recover lost leads.</p>
+                        <a href="#" target="_blank" class="gallery-link">Learn More ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EVENTBRITE SECTION -->
+        <div class="company-section">
+            <div class="company-title">
+                <img src="https://logo.clearbit.com/eventbrite.com" alt="Eventbrite"> Eventbrite
+            </div>
+            <div class="gallery-grid">
+                <!-- Checkout Experience -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Checkout" alt="Checkout">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Checkout Experience</h3>
+                        <p>Optimized purchase flow for millions of users.</p>
+                        <a href="#" target="_blank" class="gallery-link">View Flow ↗</a>
+                    </div>
+                </div>
+
+                <!-- PayPal Integration -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=PayPal" alt="PayPal">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>PayPal Integration</h3>
+                        <p>Seamless integration for global payments.</p>
+                        <a href="#" target="_blank" class="gallery-link">Read Docs ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LIFERAY SECTION -->
+        <div class="company-section">
+            <div class="company-title">
+                <img src="https://logo.clearbit.com/liferay.com" alt="Liferay"> Liferay
+            </div>
+            <div class="gallery-grid">
+                <!-- Analytics Cloud -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Analytics+Cloud" alt="Analytics Cloud">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Analytics Cloud</h3>
+                        <p>A new SaaS product built from 0 to 1.</p>
+                        <a href="#" target="_blank" class="gallery-link">Visit Site ↗</a>
+                    </div>
+                </div>
+
+                <!-- DAM -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=DAM" alt="DAM">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Digital Asset Mgmt</h3>
+                        <p>Enterprise-grade asset management system.</p>
+                        <a href="#" target="_blank" class="gallery-link">View Product ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ERICSSON SECTION -->
+        <div class="company-section">
+            <div class="company-title">
+                <img src="https://logo.clearbit.com/ericsson.com" alt="Ericsson"> Ericsson
+            </div>
+            <div class="gallery-grid">
+                <!-- Cloud SDN -->
+                <div class="gallery-card">
+                    <div class="gallery-image">
+                        <img src="https://via.placeholder.com/400x250/e0e0e0/888888?text=Cloud+SDN" alt="Cloud SDN">
+                    </div>
+                    <div class="gallery-content">
+                        <h3>Cloud SDN</h3>
+                        <p>Network virtualization for telecom operators.</p>
+                        <a href="#" target="_blank" class="gallery-link">Learn More ↗</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- === PAGE: INPUTS (EXPANDED) === -->
+    <main id="inputs" class="page-section">
+        <div class="narrative-text my-things-intro">
+            <p>
+                A curated selection of what fills my mind when I'm not building products. Here you'll find the books I've written and read, along with the movies, games, articles, and tools that spark my curiosity and shape my perspective.
+            </p>
+        </div>
+
+        <!-- 1. BOOKS & PUBLICATIONS -->
+        <div class="shelf-section">
+            <h2>Books</h2>
+            <div class="shelf-grid">
+                <!-- My Books -->
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/e0e0e0/666666?text=P2P" alt="P2P Technologies">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>P2P Technologies</h4>
+                        <span>Author (Anaya)</span>
+                    </div>
+                </div>
+                
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/e0e0e0/666666?text=Neonatal" alt="Neonatal Monitoring">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Neonatal Monitoring</h4>
+                        <span>Author (IGI Global)</span>
+                    </div>
+                </div>
+
+                <!-- Favorites -->
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Nudge" alt="Nudge Cover">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Nudge</h4>
+                        <span>Richard Thaler</span>
+                    </div>
+                </div>
+                
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Thinking" alt="Thinking Fast and Slow">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Thinking Fast & Slow</h4>
+                        <span>Daniel Kahneman</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Inspired" alt="Inspired Cover">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Inspired</h4>
+                        <span>Marty Cagan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. MOVIES & SERIES -->
+        <div class="shelf-section">
+            <h2>Movies & Series</h2>
+            <div class="shelf-grid">
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Halt+and+Catch+Fire" alt="Halt and Catch Fire">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Halt & Catch Fire</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+                
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Silicon+Valley" alt="Silicon Valley">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Silicon Valley</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Ex+Machina" alt="Ex Machina">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Ex Machina</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. GAMES -->
+        <div class="shelf-section">
+            <h2>Games</h2>
+            <div class="shelf-grid">
+                 <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/444444/ffffff?text=Zelda" alt="Zelda">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Zelda: BOTW</h4>
+                        <span>Nintendo</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="https://via.placeholder.com/200x300/444444/ffffff?text=Factorio" alt="Factorio">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Factorio</h4>
+                        <span>Wube Software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SITES & ARTICLES -->
+        <div class="shelf-section">
+            <h2>Sites & Articles</h2>
+            <div class="shelf-grid">
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="https://via.placeholder.com/320x180/e6e6e6/666666?text=Stratechery" alt="Stratechery">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Stratechery</h4>
+                        <span>Ben Thompson</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="https://via.placeholder.com/320x180/e6e6e6/666666?text=Lenny's+Newsletter" alt="Lenny's Newsletter">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Lenny's Newsletter</h4>
+                        <span>Lenny Rachitsky</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- 5. STACK & TOOLS -->
+        <div class="shelf-section">
+            <h2>Stack & Tools</h2>
+            <div class="shelf-grid">
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="https://via.placeholder.com/200/5E5CE6/ffffff?text=Plato" alt="Plato Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Plato</h4>
+                        <span>Mentorship</span>
+                    </div>
+                </div>
+                
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="https://via.placeholder.com/200/000000/ffffff?text=Reforge" alt="Reforge Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Reforge</h4>
+                        <span>Growth</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="https://via.placeholder.com/200/F05537/ffffff?text=Linear" alt="Linear Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Linear</h4>
+                        <span>Product Mgmt</span>
+                    </div>
+                </div>
+                 <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="https://via.placeholder.com/200/444444/ffffff?text=Notion" alt="Notion Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Notion</h4>
+                        <span>Knowledge</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<footer>
+    <div>© 2026 Antonio Aragüés</div>
+    <div class="social-links">
+        <a href="https://linkedin.com/in/antonioaragues/" target="_blank">LinkedIn</a>
+        <a href="https://antonioaragues.com" target="_blank">Web</a>
+        <!-- Email opens Modal -->
+        <button onclick="openModal()" style="font-family:inherit; cursor:pointer;">Email</button>
+        <!-- THEME TOGGLE SWITCH -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Theme">
+            <span id="theme-icon">☀</span>
+        </button>
+    </div>
+</footer>
+
+<!-- CONTACT MODAL STRUCTURE -->
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h2>Get in touch</h2>
+        
+        <!-- TYPEFORM PLACEHOLDER -->
+        <!-- Replace this entire DIV with your Typeform Embed Code -->
+        <div id="typeform-container" class="typeform-placeholder">
+            <p>Paste your Typeform Embed Code here.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT: ROUTING & THEME LOGIC -->
+<script>
+    // --- ROUTER ---
+    function router(pageId) {
+        document.querySelectorAll('.page-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        document.querySelectorAll('.nav-links button').forEach(btn => {
+            if (btn.id !== 'theme-toggle') {
+                btn.classList.remove('active');
+            }
+        });
+
+        const targetSection = document.getElementById(pageId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        const activeBtn = document.getElementById('nav-' + pageId);
+        if (activeBtn) {
+            activeBtn.classList.add('active');
+        }
+    }
+
+    // --- MODAL LOGIC ---
+    const modal = document.getElementById('contact-modal');
+    
+    function openModal() {
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+
+    // Close modal when clicking outside content
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // --- THEME SWITCHER ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const html = document.documentElement;
+
+    const ICON_LIGHT = '☀';
+    const ICON_DARK = '☾';
+
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+    }
+
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = ICON_DARK;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.removeAttribute('data-theme');
+            themeIcon.textContent = ICON_LIGHT;
+            localStorage.setItem('theme', 'light');
+        }
+    }
+
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+
+    initTheme();
+</script>
+
+</body>
+</html>

@@ -366,6 +366,28 @@
             line-height: 1.3;
         }
 
+        /* Spotify button for music */
+        .spotify-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            margin-top: 0.5rem;
+            background: #1DB954;
+            border-radius: 50%;
+            text-decoration: none;
+            border: none;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+        .spotify-btn:hover {
+            background: #1ed760;
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(29, 185, 84, 0.3);
+            border: none;
+        }
+
         /* --- MODAL STYLES --- */
         .modal {
             position: fixed;
@@ -742,41 +764,29 @@
         <div class="shelf-section">
             <h2>Books</h2>
             <div class="shelf-grid">
-                <!-- My Books -->
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/e0e0e0/666666?text=P2P" alt="P2P Technologies">
+                        <img src="images/inputs/books/good_strategy_bad_strategy.jpg" alt="Good Strategy Bad Strategy">
                     </div>
                     <div class="shelf-info">
-                        <h4>P2P Technologies</h4>
-                        <span>Author (Anaya)</span>
-                    </div>
-                </div>
-                
-                <div class="shelf-item">
-                    <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/e0e0e0/666666?text=Neonatal" alt="Neonatal Monitoring">
-                    </div>
-                    <div class="shelf-info">
-                        <h4>Neonatal Monitoring</h4>
-                        <span>Author (IGI Global)</span>
+                        <h4>Good Strategy/Bad Strategy</h4>
+                        <span>Richard Rumelt</span>
                     </div>
                 </div>
 
-                <!-- Favorites -->
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Nudge" alt="Nudge Cover">
+                        <img src="images/inputs/books/nudge.jpg" alt="Nudge Cover">
                     </div>
                     <div class="shelf-info">
                         <h4>Nudge</h4>
                         <span>Richard Thaler</span>
                     </div>
                 </div>
-                
+
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Thinking" alt="Thinking Fast and Slow">
+                        <img src="images/inputs/books/thinking_fast_and_slow.jpg" alt="Thinking Fast and Slow">
                     </div>
                     <div class="shelf-info">
                         <h4>Thinking Fast & Slow</h4>
@@ -786,11 +796,51 @@
 
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/333333/ffffff?text=Inspired" alt="Inspired Cover">
+                        <img src="images/inputs/books/sophie_world.jpg" alt="Sophie's World">
                     </div>
                     <div class="shelf-info">
-                        <h4>Inspired</h4>
-                        <span>Marty Cagan</span>
+                        <h4>Sophie's World</h4>
+                        <span>Jostein Gaarder</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/books/black_swan.jpg" alt="The Black Swan">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Black Swan</h4>
+                        <span>Nassim Taleb</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/books/creativity.jpg" alt="Creativity Inc">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Creativity, Inc.</h4>
+                        <span>Ed Catmull</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/books/maus.jpg" alt="Maus">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Maus</h4>
+                        <span>Art Spiegelman</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/books/beyond_the_core.jpg" alt="Beyond the Core">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Beyond the Core</h4>
+                        <span>Chris Zook</span>
                     </div>
                 </div>
             </div>
@@ -802,17 +852,27 @@
             <div class="shelf-grid">
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Halt+and+Catch+Fire" alt="Halt and Catch Fire">
+                        <img src="images/inputs/movies/game_of_thrones.jpg" alt="Game of Thrones">
                     </div>
                     <div class="shelf-info">
-                        <h4>Halt & Catch Fire</h4>
+                        <h4>Game of Thrones</h4>
                         <span>Series</span>
                     </div>
                 </div>
-                
+
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Silicon+Valley" alt="Silicon Valley">
+                        <img src="images/inputs/movies/friends.jpg" alt="Friends">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Friends</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/silicon_valley.jpg" alt="Silicon Valley">
                     </div>
                     <div class="shelf-info">
                         <h4>Silicon Valley</h4>
@@ -822,10 +882,100 @@
 
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/222222/ffffff?text=Ex+Machina" alt="Ex Machina">
+                        <img src="images/inputs/movies/peaky_blinders.jpg" alt="Peaky Blinders">
                     </div>
                     <div class="shelf-info">
-                        <h4>Ex Machina</h4>
+                        <h4>Peaky Blinders</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/the_office.jpg" alt="The Office">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Office</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/fargo.jpg" alt="Fargo">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Fargo</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/severance.jpg" alt="Severance">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Severance</h4>
+                        <span>Series</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/inception.jpg" alt="Inception">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Inception</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/matrix.jpg" alt="The Matrix">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Matrix</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/interestellar.jpg" alt="Interstellar">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Interstellar</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/lotr.jpg" alt="LOTR">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Lord of the Rings</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/dune.jpg" alt="Dune">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Dune</h4>
+                        <span>Movie</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/movies/lion_king.jpg" alt="The Lion King">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Lion King</h4>
                         <span>Movie</span>
                     </div>
                 </div>
@@ -836,9 +986,9 @@
         <div class="shelf-section">
             <h2>Games</h2>
             <div class="shelf-grid">
-                 <div class="shelf-item">
+                <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/444444/ffffff?text=Zelda" alt="Zelda">
+                        <img src="images/inputs/games/zelda_botw.jpg" alt="Zelda BOTW">
                     </div>
                     <div class="shelf-info">
                         <h4>Zelda: BOTW</h4>
@@ -848,11 +998,131 @@
 
                 <div class="shelf-item">
                     <div class="shelf-cover">
-                        <img src="https://via.placeholder.com/200x300/444444/ffffff?text=Factorio" alt="Factorio">
+                        <img src="images/inputs/games/mario_odyssey.jpg" alt="Mario Odyssey">
                     </div>
                     <div class="shelf-info">
-                        <h4>Factorio</h4>
-                        <span>Wube Software</span>
+                        <h4>Super Mario Odyssey</h4>
+                        <span>Nintendo</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/god_of_war.jpg" alt="God of War">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>God of War</h4>
+                        <span>Santa Monica Studio</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/red_dead_redemption_2.jpg" alt="Red Dead Redemption 2">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Red Dead Redemption II</h4>
+                        <span>Rockstar Games</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/rocket_league.jpg" alt="Rocket League">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Rocket League</h4>
+                        <span>Psyonix</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/ghost_of_tsushima.jpg" alt="Ghost of Tsushima">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Ghost of Tsushima</h4>
+                        <span>Sucker Punch</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/control.jpg" alt="Control">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Control</h4>
+                        <span>Remedy</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/hades.jpg" alt="Hades">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Hades</h4>
+                        <span>Supergiant Games</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/uncharted.jpg" alt="Uncharted">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Uncharted</h4>
+                        <span>Naughty Dog</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/the_last_of_us.jpg" alt="The Last of Us">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Last of Us</h4>
+                        <span>Naughty Dog</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/the_witcher.jpg" alt="The Witcher">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>The Witcher 3</h4>
+                        <span>CD Projekt Red</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/astro_bot.jpg" alt="Astro Bot">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Astro Bot</h4>
+                        <span>Team Asobi</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/mario_galaxy.jpg" alt="Mario Galaxy">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Super Mario Galaxy</h4>
+                        <span>Nintendo</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/games/pes.jpg" alt="PES">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>PES</h4>
+                        <span>Konami</span>
                     </div>
                 </div>
             </div>
@@ -864,7 +1134,7 @@
             <div class="shelf-grid">
                 <div class="shelf-item">
                     <div class="shelf-cover landscape">
-                        <img src="https://via.placeholder.com/320x180/e6e6e6/666666?text=Stratechery" alt="Stratechery">
+                        <img src="images/inputs/sites/stratechery.jpg" alt="Stratechery">
                     </div>
                     <div class="shelf-info">
                         <h4>Stratechery</h4>
@@ -874,56 +1144,244 @@
 
                 <div class="shelf-item">
                     <div class="shelf-cover landscape">
-                        <img src="https://via.placeholder.com/320x180/e6e6e6/666666?text=Lenny's+Newsletter" alt="Lenny's Newsletter">
+                        <img src="images/inputs/sites/lennys_newsletter.jpg" alt="Lenny's Newsletter">
                     </div>
                     <div class="shelf-info">
                         <h4>Lenny's Newsletter</h4>
                         <span>Lenny Rachitsky</span>
                     </div>
                 </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/substack.jpg" alt="Substack">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Substack</h4>
+                        <span>Newsletter Platform</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/hacker_news.jpg" alt="Hacker News">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Hacker News</h4>
+                        <span>Tech Community</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/reddit.png" alt="Reddit">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Reddit</h4>
+                        <span>Community</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/lesswrong.png" alt="LessWrong">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>LessWrong</h4>
+                        <span>Rationality</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/goodreads.jpg" alt="Goodreads">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Goodreads</h4>
+                        <span>Books</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover landscape">
+                        <img src="images/inputs/sites/techmeme.webp" alt="Techmeme">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Techmeme</h4>
+                        <span>Tech News</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-         <!-- 5. STACK & TOOLS -->
+        <!-- 5. MUSIC -->
+        <div class="shelf-section">
+            <h2>Music</h2>
+            <div class="shelf-grid">
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/arctic_monkeys.jpg" alt="Arctic Monkeys">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Arctic Monkeys</h4>
+                        <span>Band</span>
+                        <a href="https://open.spotify.com/artist/7Ln80lUS6He07XvHI8qqHH" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/viva_suecia.jpg" alt="Viva Suecia">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Viva Suecia</h4>
+                        <span>Band</span>
+                        <a href="https://open.spotify.com/artist/0fWc4L6TP6YRBLFTHu2UHC" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/radiohead.jpg" alt="Radiohead">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Radiohead</h4>
+                        <span>Band</span>
+                        <a href="https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/metallica.jpg" alt="Metallica">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Metallica</h4>
+                        <span>Band</span>
+                        <a href="https://open.spotify.com/artist/2ye2Wgw4gimLv2eAKyk1NB" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/arcade_fire.jpg" alt="Arcade Fire">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Arcade Fire</h4>
+                        <span>Band</span>
+                        <a href="https://open.spotify.com/artist/3kjuyTCjPG1WMFCiyc5IuB" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/sufjan.jpg" alt="Sufjan Stevens">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Sufjan Stevens</h4>
+                        <span>Artist</span>
+                        <a href="https://open.spotify.com/artist/4MXUO7sVCaFgFjoTI5ox5c" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover">
+                        <img src="images/inputs/music/bruce_springsteen.jpg" alt="Bruce Springsteen">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Bruce Springsteen</h4>
+                        <span>Artist</span>
+                        <a href="https://open.spotify.com/artist/3eqjTLE0HfPfh78zjh6TqT" target="_blank" class="spotify-btn" title="Listen on Spotify">
+                            ▶
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- 6. STACK & TOOLS -->
         <div class="shelf-section">
             <h2>Stack & Tools</h2>
             <div class="shelf-grid">
                 <div class="shelf-item">
                     <div class="shelf-cover square">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/2048px-Google_Gemini_icon_2025.svg.png" alt="Gemini Icon">
+                        <img src="images/inputs/tools/gemini.png" alt="Gemini Icon">
                     </div>
                     <div class="shelf-info">
                         <h4>Gemini</h4>
                         <span>AI</span>
                     </div>
                 </div>
-                
+
                 <div class="shelf-item">
                     <div class="shelf-cover square">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/500px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Icon">
+                        <img src="images/inputs/tools/claude.png" alt="Claude Icon">
                     </div>
                     <div class="shelf-info">
-                        <h4>Visual Studio</h4>
-                        <span>Dev</span>
+                        <h4>Claude Code</h4>
+                        <span>AI Dev Tool</span>
                     </div>
                 </div>
+
                 <div class="shelf-item">
                     <div class="shelf-cover square">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Zen_Browser_logo_%28red_circles%29.svg/2048px-Zen_Browser_logo_%28red_circles%29.svg.png" alt="Zen Icon">
+                        <img src="images/inputs/tools/vscode.png" alt="VS Code Icon">
                     </div>
                     <div class="shelf-info">
-                        <h4>Zen</h4>
+                        <h4>VS Code</h4>
+                        <span>Editor</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="images/inputs/tools/zen.png" alt="Zen Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Zen Browser</h4>
                         <span>Browser</span>
                     </div>
                 </div>
 
-                 <div class="shelf-item">
+                <div class="shelf-item">
                     <div class="shelf-cover square">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Notion-logo.svg/2048px-Notion-logo.svg.png" alt="Notion Icon">
+                        <img src="images/inputs/tools/obsidian.png" alt="Obsidian Icon">
                     </div>
                     <div class="shelf-info">
-                        <h4>Notion</h4>
-                        <span>Knowledge</span>
+                        <h4>Obsidian</h4>
+                        <span>Knowledge Base</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="images/inputs/tools/figma.png" alt="Figma Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>Figma</h4>
+                        <span>Design</span>
+                    </div>
+                </div>
+
+                <div class="shelf-item">
+                    <div class="shelf-cover square">
+                        <img src="images/inputs/tools/github.png" alt="GitHub Icon">
+                    </div>
+                    <div class="shelf-info">
+                        <h4>GitHub</h4>
+                        <span>Version Control</span>
                     </div>
                 </div>
             </div>
